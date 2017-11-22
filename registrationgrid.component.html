@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <h3 class="title" align="center">Student Details</h3>    
+    <div class=grid>
+    <p-dataTable [value]="stud">
+    <p-column  field="RegId" header="RegId" ></p-column>
+    <p-column  field="Name" header="Name" ></p-column>
+    <p-column  field="Age" header="Age" ></p-column>
+    <p-column  field="Qulification" header="Qulification" ></p-column>
+    <p-column  field="Contactno" header="Contactno" ></p-column>
+    <p-column  field="City" header="City" ></p-column>
+         <p-column field="Options" header="Menu" [sortable]=true>
+        <template let-val="rowData"  pTemplate type="body">
+            <button pButton type="button" (click)="onclickEdit(val.RegId)" label="Edit">Edit</button>
+            <button pButton type="button" (click)="onclickDelete(val)" label="Delete">Delete</button>                 
+         </template>
+    </p-column>
+
+    </p-dataTable>
+    </div>
+    </body>
+</html>
+    
